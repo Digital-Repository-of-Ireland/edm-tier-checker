@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         chrome.tabs.query({ active: true, currentWindow: true}, function(tabs) {
             let url = tabs[0].url
-            if (url.includes("europeana.eu") || url.includes("metis-sandbox")) {
+            if (url.includes("europeana.eu") || url.includes("metis")) {
                 url = url.replace(/&qf=(metadata|content)Tier%3A./, "");
                 let newUrl = url+qstring
                 chrome.tabs.update(undefined, { url: newUrl });
